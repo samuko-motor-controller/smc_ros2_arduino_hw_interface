@@ -1,0 +1,9 @@
+<library path="smc_ros2_arduino_hw_interface">
+  <class name="smc_ros2_arduino_hw_interface/SMCArduinoHardwareInterface"
+         type="smc_ros2_arduino_hw_interface::SMCArduinoHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      The ros2 hardware interface for the SMC_driver module (arduino)
+    </description>
+  </class>
+</library>
