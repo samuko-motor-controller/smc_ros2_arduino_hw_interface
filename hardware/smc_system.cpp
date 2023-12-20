@@ -197,10 +197,10 @@ hardware_interface::return_type SMCArduinoHardwareInterface::read(
     return hardware_interface::return_type::ERROR;
   }
 
-  try{
+  float motorA_angPos, motorB_angPos;
+  float motorA_angVel, motorB_angVel;
 
-    float motorA_angPos, motorB_angPos;
-    float motorA_angVel, motorB_angVel;
+  try{
 
     smc_.getMotorsPos(motorA_angPos, motorB_angPos); // gets angPosA, angPosB
     smc_.getMotorsVel(motorA_angVel, motorB_angVel); // gets angVelA, angVelB
@@ -213,7 +213,6 @@ hardware_interface::return_type SMCArduinoHardwareInterface::read(
 
   }
   catch(...){
-
   }
   
   return hardware_interface::return_type::OK;
@@ -227,10 +226,9 @@ hardware_interface::return_type smc_ros2_arduino_hw_interface ::SMCArduinoHardwa
     return hardware_interface::return_type::ERROR;
   }
 
+  float motorA_cmdAngVel, motorB_cmdAngVel;
+
   try{
-
-    float motorA_cmdAngVel, motorB_cmdAngVel;
-
     motorA_cmdAngVel = (float)motorA_.cmdAngVel;
     motorB_cmdAngVel = (float)motorB_.cmdAngVel;
 
